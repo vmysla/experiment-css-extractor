@@ -1,6 +1,8 @@
 <html>
   <head>
   	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+  	<script src="specificity.js"></script>
+	
 
   	<link href="all.css" media="all" rel="stylesheet" type="text/css" />
 	<link href="print.css" media="print" rel="stylesheet" type="text/css" />
@@ -9,9 +11,62 @@
 
 		.default {
 			text-decoration: underline;
+			 -moz-opacity : 1;
+			 -khtml-opacity : 1;
 		}
 
-		.default b, .default p {
+		.parent .default i{
+			color: red;
+		}
+
+		.parent .default > i{
+			color: red;
+		}
+
+		.parent > .default{
+			color: blue;
+		}
+
+
+		.parent i{
+			color: blue;
+		}
+
+
+		div div {
+			color : black;
+		}
+
+		.default .default {
+			color : black;
+		}
+
+		div div p {
+			color : black;
+		}
+
+		div .default p {
+			color : black;
+		}
+
+
+		div > .default p {
+			color : black;
+		}
+
+		div .default > p {
+			color : black;
+		}
+
+		div > .default > p {
+			color : black;
+		}
+
+		.default i{
+			color: black;
+		}
+
+		#default p, .default b, .default p{
 			font-size: 20px;
 		}
 
@@ -53,9 +108,22 @@
 		    }
 		}
 
+		@media (max-width: 480px) {
+		    .default p {
+		    	border: 10px solid green;
+		    }
+		}
+
 		.default p {
 	    	background: gray;
 	    }
+
+		@media (max-width: 480px) {
+		    .default p {
+		    	border: 1px solid red;
+		    }
+		}
+
 
  		@font-face {
            font-style: italic;
@@ -77,9 +145,29 @@
 	</script>
   </head>
   <body>
-  	<div id="default" class="default" onclick="processDocument();">
-  		<b>text</b>
-  		<p>text</p>
+
+  	<div class="parent">
+
+  		<span>span outside of element</span>
+
+	  	<div id="default" class="default" onclick="processDocument();">
+	  		<b>text</b>
+	  		<p>text</p>
+	  		<i>text</i>
+	  		<span>span</span>
+<!--
+	  		<div class="parent">
+	  			<p>p</p>
+	  		</div>
+
+	  		<div>
+	  		<div class="x">
+	  			<p>p</p>
+	  		</div>
+	  		</div>
+-->
+	  	</div>
+
   	</div>
 
   </body>
