@@ -1,0 +1,16 @@
+@import 'import.css';
+@import url('import-mobile.css') screen and (max-width:480px);
+
+.default{
+
+	color : red;
+}
+
+.default b{
+	color : green;
+}
+
+.default p{
+	padding: 10px;
+}
+

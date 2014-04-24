@@ -1,0 +1,61 @@
+<html>
+  <head>
+  	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+  	<link href="all.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="print.css" media="print" rel="stylesheet" type="text/css" />
+	
+	<style>
+
+		.default {
+			text-decoration: underline;
+		}
+
+		.default b:hover:first-child {
+			background: orange;
+		}
+
+		.default b:hover:first-child:after {
+			background: orange;
+		}
+
+		.default p{
+			font-style: italic;
+		}
+		
+
+		.default p:hover{
+			margin: 10px;
+		}
+
+		.default p:after{
+			content: "xxx";
+		}
+		
+
+		.default p:hover:after{
+			content: "yyy";
+		}
+		
+
+		@media (max-width: 480px) {
+		    .default p {
+		    	background: yellow;
+		    }
+		}
+
+
+	</style>
+
+	<script src="script.js">
+
+	</script>
+  </head>
+  <body>
+  	<div id="default" class="default" onclick="processDocument();">
+  		<b>text</b>
+  		<p>text</p>
+  	</div>
+
+  </body>
+</html>

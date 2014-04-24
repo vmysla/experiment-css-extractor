@@ -1,0 +1,69 @@
+<html>
+  <head>
+  	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+  	<link href="all.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="print.css" media="print" rel="stylesheet" type="text/css" />
+	
+	<style>
+		.default {
+			text-decoration: underline;
+		}
+
+		.default p{
+			font-style: italic;
+		}
+		
+
+		@media (max-width: 480px) {
+		    .default p {
+		    	background: yellow;
+		    }
+		}
+
+	</style>
+
+	<script>
+
+	$(function(){
+		jQuery.fn.extend({
+		getStyles: function() {
+		    var rulesUsed = [];
+		    var sheets = document.styleSheets;
+		    for (var c = 0; c < sheets.length; c++) {
+		        var rules = sheets[c].rules || sheets[c].cssRules;
+		        console.log(sheets[c].rules,sheets[c].cssRules);
+		        for (var r = 0; r < rules.length; r++) {
+		            if(typeof rules[r].selectorText!='undefined'){
+		            var selectorText = rules[r].selectorText.toLowerCase().replace(":hover","");
+		            if (this.is(selectorText) || this.find(selectorText).length > 0) {
+		                rulesUsed.push(rules[r]);
+		            }
+		            }else
+		            {
+		              console.log(rules[r]);
+		            }
+		        }
+		    }
+		    var style = rulesUsed.map(function(cssRule) {
+		        return cssRule.selectorText.toLowerCase() + ' { ' + cssRule.style.cssText.toLowerCase() + ' }';
+		    }).join("\n");
+		    return style;
+		}
+		});
+	
+		var styles = $('.default p').getStyles();
+		console.log(styles);
+
+	});
+
+	</script>
+  </head>
+  <body>
+  	<div id="default" class="default">
+  		<b>text</b>
+  		<p>text</p>
+  	</div>
+
+  </body>
+</html>

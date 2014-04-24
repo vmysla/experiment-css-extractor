@@ -1,0 +1,176 @@
+<html>
+  <head>
+  	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+  	<link href="all.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="print.css" media="print" rel="stylesheet" type="text/css" />
+	
+	<style>
+
+		.default {
+			text-decoration: underline;
+		}
+
+		.default b:hover:first-child {
+			background: orange;
+		}
+
+		.default b:hover:first-child:after {
+			background: orange;
+		}
+
+		.default p{
+			font-style: italic;
+		}
+		
+
+		.default p:hover{
+			margin: 10px;
+		}
+
+		.default p:after{
+			content: "xxx";
+		}
+		
+
+		.default p:hover:after{
+			content: "yyy";
+		}
+		
+
+		@media (max-width: 480px) {
+		    .default p {
+		    	background: yellow;
+		    }
+		}
+
+
+	</style>
+
+	<script>
+
+
+	var rules = {};
+	
+		function processSheet(sheet, media, mediaText){
+
+			//console.log('sheet', sheet);
+
+			for (var i = 0; i < sheet.cssRules.length; i++) {
+		    	var rule = sheet.cssRules[i];
+		    	processRule(rule, sheet.href, media, mediaText);
+			}
+
+		}
+
+
+		function processRule(rule, href, media, mediaText){
+
+			if( typeof rule.selectorText != 'undefined' ){
+				// style rule
+				//console.log('style rule', mediaText, rule);
+				
+
+				var elementSelectorText = rule.selectorText;
+				var ignoredPseudoElementsAndClasses = [':link', ':visited', ':active', ':hover', ':focus', '::before', '::after'];
+				for(var i=0; i<ignoredPseudoElementsAndClasses.length; i++){
+					var ignored = ignoredPseudoElementsAndClasses[i];
+					elementSelectorText = elementSelectorText.replace(ignored,'');
+				}
+				
+				var elementSelectorRules = rules[elementSelectorText] || [];
+				elementSelectorRules.push({ 'href' : href, 'media' : media, 'rule': rule});
+				rules[elementSelectorText] = elementSelectorRules;
+
+				//console.log('style rule', elementSelectorText, href, mediaText, rule.selectorText);
+			}
+
+
+			if( typeof rule.href != 'undefined' ){
+				// import rule
+				//console.log('import rule', rule.media.mediaText, rule);
+				processSheet(rule.styleSheet, media, mediaText + ' and ' + rule.media.mediaText );
+			}
+
+			if( typeof rule.cssRules != 'undefined' ){
+				// media rule
+				//console.log('media rule', rule.media.mediaText, rule);
+				processSheet(rule, media, mediaText + ' and ' + rule.media.mediaText );
+			}
+
+		}
+
+
+		function processStyles(){
+
+			console.clear();
+			console.log('==============================');
+
+			var sheets = document.styleSheets;
+			for (var c = 0; c < sheets.length; c++) {
+			    var sheet = sheets[c];
+			    processSheet(sheet, sheet.media, sheet.media.mediaText );
+			}
+
+			console.log(rules);
+		}
+
+		function processElementRules(child, matchedRules){
+
+			// skip #text nodes
+			if( typeof(child.matches) == 'undefined' ) return;
+
+			for(var rule in rules){
+											
+				if( child.matches(rule) ){
+					//console.log('element rule', child, rule);
+					matchedRules.push(rule);
+				};
+			}
+
+			return matchedRules;
+		}
+
+		function processElement(element, matchedRules){
+			
+			//console.log('element', element);
+
+			processElementRules(element, matchedRules);
+
+			if(element.hasChildNodes()){
+				for(var i=0; i<element.childNodes.length;i++){
+					var childElement = element.childNodes[i];
+					processElement(childElement, matchedRules);
+				}
+			}
+			
+			return matchedRules;
+		}
+
+		function processDocument(){
+
+			processStyles();
+			
+
+			var element = $('.default')[0];
+
+			var matchedRules = processElement(element,[]);
+
+			console.log(matchedRules);
+			
+		}
+
+	$(document).ready(function(){
+		window.setTimeout(processDocument,1000);
+	});
+
+	</script>
+  </head>
+  <body>
+  	<div id="default" class="default" onclick="processDocument();">
+  		<b>text</b>
+  		<p>text</p>
+  	</div>
+
+  </body>
+</html>
