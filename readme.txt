@@ -16,3 +16,4 @@ http://stackoverflow.com/questions/11429568/to-get-the-right-media-queries-to-co
 TODO:
 - fonts, keyframes, etc?
 - remove duplicated rules
+- fo through rules vs elements OR remember order

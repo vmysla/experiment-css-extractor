@@ -1,566 +1,99 @@
 <style>
+#JA_mediaCoverage dt .JA_media { background-image: url(http://www.justanswer.com/cssframework/img/sprites/icons-media_1_2_0.png); }
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_belowQuestionBoxPane { margin-bottom: 20px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_columns .JA_column, .JA_columns .JA_column_left { float: left; }
-.JA_columns.JA_threeColumns .JA_column { border: 0px; margin: 0px; width: 33.33%; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage.JA_module { padding-top: 2em; position: relative; }
-.JA_columns.JA_threeColumns .JA_column.JA_moduleContainer .JA_module { margin: auto; width: 96%; }
-.JA_columns.JA_threeColumns .JA_column.JA_moduleContainer:first-child .JA_module { margin-left: 0px; }
-#JA_mediaCoverage.JA_mediaInfo.JA_module { height: auto; padding-top: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
+ol, ul { list-style: none; }
+a { text-decoration: underline; }
+a:hover { text-decoration: underline; }
 h1, h2, h3 { font-size: 14px; line-height: 1.3em; }
 h2, h3 { font-size: 1.2em; line-height: 1.3em; }
-.JA_module h2 { font-size: 1.1em; margin: 0px 0px 0.4em 14px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_round-box { background-color: rgb(255, 255, 255); border: 1px solid rgb(226, 226, 226); border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; background-position: initial initial; background-repeat: initial initial; }
-.JA_round-box { padding: 10px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage dl.JA_quoteRight { height: 270px; margin-top: -1em; position: relative; }
-#JA_mediaCoverage.JA_mediaInfo dl { height: auto; margin-top: 0px; padding: 0px; width: 100%; }
-#JA_mediaCoverage.JA_mediaInfo dl::after { clear: both; content: ' '; display: block; height: 0px; visibility: hidden; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { border: none; float: left; margin: 0px; padding: 11px 0px; width: 50%; }
-#JA_mediaCoverage dt .JA_media { background-image: url(http://www.justanswer.com/cssframework/img/sprites/icons-media_1_2_0.png); }
-#JA_mediaCoverage dt .JA_media { cursor: pointer; height: 40px; position: relative; width: 115px; z-index: 10; background-repeat: no-repeat no-repeat; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage dt .JA_media1 { background-position: 0px 0px; }
-#JA_mediaCoverage.JA_mediaInfo dt .JA_media, #JA_mediaCoverage.JA_mediaInfo dt.JA_active .JA_media { margin: auto; width: 115px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage dd.JA_mediaQuote { border: 1px solid rgb(226, 226, 226); display: none; height: 270px; left: 154px; margin-top: -1em; padding: 0.6em; position: absolute; top: 0px; width: 140px; z-index: 0; }
-#JA_mediaCoverage.JA_mediaInfo dl dd.JA_mediaQuote { display: none; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { border: none; float: left; margin: 0px; padding: 11px 0px; width: 50%; }
-#JA_mediaCoverage dt .JA_media { background-image: url(http://www.justanswer.com/cssframework/img/sprites/icons-media_1_2_0.png); }
-#JA_mediaCoverage dt .JA_media { cursor: pointer; height: 40px; position: relative; width: 115px; z-index: 10; background-repeat: no-repeat no-repeat; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage dt.JA_active .JA_media { width: 156px; }
-#JA_mediaCoverage dt .JA_media2 { background-position: 0px -43px; }
-#JA_mediaCoverage.JA_mediaInfo dt .JA_media, #JA_mediaCoverage.JA_mediaInfo dt.JA_active .JA_media { margin: auto; width: 115px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage dd.JA_mediaQuote { border: 1px solid rgb(226, 226, 226); display: none; height: 270px; left: 154px; margin-top: -1em; padding: 0.6em; position: absolute; top: 0px; width: 140px; z-index: 0; }
-#JA_mediaCoverage dd.JA_active { display: block; }
-#JA_mediaCoverage.JA_mediaInfo dl dd.JA_mediaQuote { display: none; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { border: none; float: left; margin: 0px; padding: 11px 0px; width: 50%; }
-#JA_mediaCoverage dt .JA_media { background-image: url(http://www.justanswer.com/cssframework/img/sprites/icons-media_1_2_0.png); }
-#JA_mediaCoverage dt .JA_media { cursor: pointer; height: 40px; position: relative; width: 115px; z-index: 10; background-repeat: no-repeat no-repeat; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage dt .JA_media3 { background-position: 0px -86px; }
-#JA_mediaCoverage.JA_mediaInfo dt .JA_media, #JA_mediaCoverage.JA_mediaInfo dt.JA_active .JA_media { margin: auto; width: 115px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage dd.JA_mediaQuote { border: 1px solid rgb(226, 226, 226); display: none; height: 270px; left: 154px; margin-top: -1em; padding: 0.6em; position: absolute; top: 0px; width: 140px; z-index: 0; }
-#JA_mediaCoverage.JA_mediaInfo dl dd.JA_mediaQuote { display: none; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { border: none; float: left; margin: 0px; padding: 11px 0px; width: 50%; }
-#JA_mediaCoverage dt .JA_media { background-image: url(http://www.justanswer.com/cssframework/img/sprites/icons-media_1_2_0.png); }
-#JA_mediaCoverage dt .JA_media { cursor: pointer; height: 40px; position: relative; width: 115px; z-index: 10; background-repeat: no-repeat no-repeat; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage dt .JA_media4 { background-position: 0px -129px; }
-#JA_mediaCoverage.JA_mediaInfo dt .JA_media, #JA_mediaCoverage.JA_mediaInfo dt.JA_active .JA_media { margin: auto; width: 115px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage dd.JA_mediaQuote { border: 1px solid rgb(226, 226, 226); display: none; height: 270px; left: 154px; margin-top: -1em; padding: 0.6em; position: absolute; top: 0px; width: 140px; z-index: 0; }
-#JA_mediaCoverage.JA_mediaInfo dl dd.JA_mediaQuote { display: none; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { border: none; float: left; margin: 0px; padding: 11px 0px; width: 50%; }
-#JA_mediaCoverage dt .JA_media { background-image: url(http://www.justanswer.com/cssframework/img/sprites/icons-media_1_2_0.png); }
-#JA_mediaCoverage dt .JA_media { cursor: pointer; height: 40px; position: relative; width: 115px; z-index: 10; background-repeat: no-repeat no-repeat; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage dt .JA_media5 { background-position: 0px -172px; }
-#JA_mediaCoverage.JA_mediaInfo dt .JA_media, #JA_mediaCoverage.JA_mediaInfo dt.JA_active .JA_media { margin: auto; width: 115px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage dd.JA_mediaQuote { border: 1px solid rgb(226, 226, 226); display: none; height: 270px; left: 154px; margin-top: -1em; padding: 0.6em; position: absolute; top: 0px; width: 140px; z-index: 0; }
-#JA_mediaCoverage.JA_mediaInfo dl dd.JA_mediaQuote { display: none; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { border: none; float: left; margin: 0px; padding: 11px 0px; width: 50%; }
-#JA_mediaCoverage dt .JA_media { background-image: url(http://www.justanswer.com/cssframework/img/sprites/icons-media_1_2_0.png); }
-#JA_mediaCoverage dt .JA_media { cursor: pointer; height: 40px; position: relative; width: 115px; z-index: 10; background-repeat: no-repeat no-repeat; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage dt .JA_media6 { background-position: 0px -215px; }
-#JA_mediaCoverage.JA_mediaInfo dt .JA_media, #JA_mediaCoverage.JA_mediaInfo dt.JA_active .JA_media { margin: auto; width: 115px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_mediaCoverage dd.JA_mediaQuote { border: 1px solid rgb(226, 226, 226); display: none; height: 270px; left: 154px; margin-top: -1em; padding: 0.6em; position: absolute; top: 0px; width: 140px; z-index: 0; }
-#JA_mediaCoverage.JA_mediaInfo dl dd.JA_mediaQuote { display: none; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
+h3 { margin-bottom: 0.8075em; }
+p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
+a { color: rgb(27, 146, 171); }
+a:hover, a.JA_hover { color: rgb(255, 153, 0); }
+.JA_hiddenElement, .hidden, .JA_hidden, #JA_javascript, .JA_javascript { display: none; }
 .JA_columns .JA_column, .JA_columns .JA_column_left { float: left; }
-.JA_columns.JA_threeColumns .JA_column { border: 0px; margin: 0px; width: 33.33%; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_columns.JA_threeColumns .JA_column.JA_moduleContainer .JA_module { margin: auto; width: 96%; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-h1, h2, h3 { font-size: 14px; line-height: 1.3em; }
-h2, h3 { font-size: 1.2em; line-height: 1.3em; }
+.JA_clear { clear: both; }
+.JA_module .JA_body { padding: 0px; }
+.JA_module .JA_body { padding: 0px; }
 .JA_module h2 { font-size: 1.1em; margin: 0px 0px 0.4em 14px; }
-#JA_testimonials h2 { margin: 0px 0px 0.4em 10px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_round-box { background-color: rgb(255, 255, 255); border: 1px solid rgb(226, 226, 226); border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; background-position: initial initial; background-repeat: initial initial; }
-.JA_round-box { padding: 10px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_module .JA_body { padding: 0px; }
-.JA_module .JA_body { padding: 0px; }
+.JA_module .JA_cycleControls { padding: 8px 8px 0px 0px; text-align: right; }
+#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
 .home-page-unified #JA_testimonials .JA_body { min-height: 170px; padding: 0px; }
 #JA_testimonials .JA_body { min-height: 150px; padding: 10px; height: auto !important; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-ol, ul { list-style: none; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
+#JA_testimonials h2 { margin: 0px 0px 0.4em 10px; }
 #JA_testimonials ul li { display: inline; overflow: hidden; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
 #JA_testimonials .JA_testimonialQuote { display: block; margin: 0px 30px; }
-#JA_testimonials .JA_testimonialQuote { margin: 0px 10px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
 #JA_testimonials .JA_testimonialWho { display: block; font-weight: bold; padding-right: 10px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
 #JA_testimonials .JA_testimonialName { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
 #JA_testimonials .JA_testimonialLocation { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_module .JA_cycleControls { padding: 8px 8px 0px 0px; text-align: right; }
-.JA_module .JA_cycleControls, #JA_expertProfiles .JA_roundFooter { padding: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-a { text-decoration: underline; }
-a:hover { text-decoration: underline; }
-a { color: rgb(27, 146, 171); }
-a:hover, a.JA_hover { color: rgb(255, 153, 0); }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-a { text-decoration: underline; }
-a:hover { text-decoration: underline; }
-a { color: rgb(27, 146, 171); }
-a:hover, a.JA_hover { color: rgb(255, 153, 0); }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-ol, ul { list-style: none; }
-.JA_hiddenElement, .hidden, .JA_hidden, #JA_javascript, .JA_javascript { display: none; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials ul li { display: inline; overflow: hidden; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialQuote { display: block; margin: 0px 30px; }
-#JA_testimonials .JA_testimonialQuote { margin: 0px 10px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialName { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialLocation { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials ul li { display: inline; overflow: hidden; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialQuote { display: block; margin: 0px 30px; }
-#JA_testimonials .JA_testimonialQuote { margin: 0px 10px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialName { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialLocation { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials ul li { display: inline; overflow: hidden; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialQuote { display: block; margin: 0px 30px; }
-#JA_testimonials .JA_testimonialQuote { margin: 0px 10px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialName { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialLocation { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials ul li { display: inline; overflow: hidden; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialQuote { display: block; margin: 0px 30px; }
-#JA_testimonials .JA_testimonialQuote { margin: 0px 10px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialName { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialLocation { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials ul li { display: inline; overflow: hidden; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialQuote { display: block; margin: 0px 30px; }
-#JA_testimonials .JA_testimonialQuote { margin: 0px 10px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialName { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialLocation { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials ul li { display: inline; overflow: hidden; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialQuote { display: block; margin: 0px 30px; }
-#JA_testimonials .JA_testimonialQuote { margin: 0px 10px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialName { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialLocation { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials ul li { display: inline; overflow: hidden; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialQuote { display: block; margin: 0px 30px; }
-#JA_testimonials .JA_testimonialQuote { margin: 0px 10px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialName { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_testimonials .JA_testimonialLocation { display: block; text-align: right; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_columns .JA_column, .JA_columns .JA_column_left { float: left; }
-.JA_columns.JA_threeColumns .JA_column { border: 0px; margin: 0px; width: 33.33%; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_columns.JA_threeColumns .JA_column.JA_moduleContainer .JA_module { margin: auto; width: 96%; }
-.JA_columns.JA_threeColumns .JA_column.JA_moduleContainer:last-child .JA_module { margin-right: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-h1, h2, h3 { font-size: 14px; line-height: 1.3em; }
-h2, h3 { font-size: 1.2em; line-height: 1.3em; }
-.JA_module h2 { font-size: 1.1em; margin: 0px 0px 0.4em 14px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_round-box { background-color: rgb(255, 255, 255); border: 1px solid rgb(226, 226, 226); border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; background-position: initial initial; background-repeat: initial initial; }
-.JA_round-box { padding: 10px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-ol, ul { list-style: none; }
-.JA_module .JA_body { padding: 0px; }
-.JA_module .JA_body { padding: 0px; }
-#JA_expertProfiles .JA_body { min-height: 150px; padding: 10px; position: relative; height: auto !important; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
+#JA_mediaCoverage.JA_module { padding-top: 2em; position: relative; }
+#JA_mediaCoverage dl.JA_quoteRight { height: 270px; margin-top: -1em; position: relative; }
+#JA_mediaCoverage dt .JA_media { cursor: pointer; height: 40px; position: relative; width: 115px; z-index: 10; background-repeat: no-repeat no-repeat; }
+#JA_mediaCoverage dt.JA_active .JA_media { width: 156px; }
+#JA_mediaCoverage dt .JA_media1 { background-position: 0px 0px; }
+#JA_mediaCoverage dt .JA_media2 { background-position: 0px -43px; }
+#JA_mediaCoverage dt .JA_media3 { background-position: 0px -86px; }
+#JA_mediaCoverage dt .JA_media4 { background-position: 0px -129px; }
+#JA_mediaCoverage dt .JA_media5 { background-position: 0px -172px; }
+#JA_mediaCoverage dt .JA_media6 { background-position: 0px -215px; }
+#JA_mediaCoverage dd.JA_mediaQuote { border: 1px solid rgb(226, 226, 226); display: none; height: 270px; left: 154px; margin-top: -1em; padding: 0.6em; position: absolute; top: 0px; width: 140px; z-index: 0; }
+#JA_mediaCoverage dd.JA_active { display: block; }
 #JA_expertProfiles ul li { display: inline-block; }
-#JA_expertProfiles ul.JA_body li { display: block; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
+#JA_expertProfiles .JA_body { min-height: 150px; padding: 10px; position: relative; height: auto !important; }
 #JA_expertProfiles .JA_avatarHolder { left: 8px; width: 64px; float: left; margin-right: 8px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
 #JA_expertProfiles .JA_avatar { width: 64px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
+#JA_expertProfiles ul.JA_body li { display: block; }
 #JA_expertProfiles .JA_profileInfo { margin-left: 70px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-h1, h2, h3 { font-size: 14px; line-height: 1.3em; }
-h2, h3 { font-size: 1.2em; line-height: 1.3em; }
-h3 { margin-bottom: 0.8075em; }
 #JA_expertProfiles .JA_profileInfo h3 { margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
 #JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
 #JA_expertProfiles .JA_titleValuePair { line-height: 1.4em; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
 #JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
 #JA_expertProfiles .JA_profileAccepts .JA_value { font-weight: bold; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
 #JA_expertProfiles .JA_miniProfile { margin-left: -70px; padding-top: 0.6em; padding-left: 2px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_clear { clear: both; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_hiddenElement, .hidden, .JA_hidden, #JA_javascript, .JA_javascript { display: none; }
-.JA_module .JA_cycleControls { padding: 8px 8px 0px 0px; text-align: right; }
 #JA_expertProfiles .JA_roundFooter { padding: 8px 8px 0px 0px; text-align: right; }
+.JA_round-box { background-color: rgb(255, 255, 255); border: 1px solid rgb(226, 226, 226); border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; background-position: initial initial; background-repeat: initial initial; }
+.JA_columns.JA_threeColumns .JA_column { border: 0px; margin: 0px; width: 33.33%; }
+.JA_columns.JA_threeColumns .JA_column.JA_moduleContainer .JA_module { margin: auto; width: 96%; }
+.JA_columns.JA_threeColumns .JA_column.JA_moduleContainer:first-child .JA_module { margin-left: 0px; }
+.JA_columns.JA_threeColumns .JA_column.JA_moduleContainer:last-child .JA_module { margin-right: 0px; }
+.JA_belowQuestionBoxPane { margin-bottom: 20px; }
+#JA_mediaCoverage.JA_mediaInfo.JA_module { height: auto; padding-top: 0px; }
+#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { border: none; float: left; margin: 0px; padding: 11px 0px; width: 50%; }
+#JA_mediaCoverage.JA_mediaInfo dl { height: auto; margin-top: 0px; padding: 0px; width: 100%; }
+.JA_round-box { padding: 10px; }
 .JA_module .JA_cycleControls, #JA_expertProfiles .JA_roundFooter { padding: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-a { text-decoration: underline; }
-a:hover { text-decoration: underline; }
-a { color: rgb(27, 146, 171); }
-a:hover, a.JA_hover { color: rgb(255, 153, 0); }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-a { text-decoration: underline; }
-a:hover { text-decoration: underline; }
-a { color: rgb(27, 146, 171); }
-a:hover, a.JA_hover { color: rgb(255, 153, 0); }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-ol, ul { list-style: none; }
-.JA_hiddenElement, .hidden, .JA_hidden, #JA_javascript, .JA_javascript { display: none; }
-.JA_module .JA_body { padding: 0px; }
-.JA_module .JA_body { padding: 0px; }
-#JA_expertProfiles .JA_body { min-height: 150px; padding: 10px; position: relative; height: auto !important; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles ul li { display: inline-block; }
-#JA_expertProfiles ul.JA_body li { display: block; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_profileInfo { margin-left: 70px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-h1, h2, h3 { font-size: 14px; line-height: 1.3em; }
-h2, h3 { font-size: 1.2em; line-height: 1.3em; }
-h3 { margin-bottom: 0.8075em; }
-#JA_expertProfiles .JA_profileInfo h3 { margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_titleValuePair { line-height: 1.4em; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-#JA_expertProfiles .JA_profileAccepts .JA_value { font-weight: bold; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_miniProfile { margin-left: -70px; padding-top: 0.6em; padding-left: 2px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_clear { clear: both; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles ul li { display: inline-block; }
-#JA_expertProfiles ul.JA_body li { display: block; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_profileInfo { margin-left: 70px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-h1, h2, h3 { font-size: 14px; line-height: 1.3em; }
-h2, h3 { font-size: 1.2em; line-height: 1.3em; }
-h3 { margin-bottom: 0.8075em; }
-#JA_expertProfiles .JA_profileInfo h3 { margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_titleValuePair { line-height: 1.4em; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-#JA_expertProfiles .JA_profileAccepts .JA_value { font-weight: bold; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_miniProfile { margin-left: -70px; padding-top: 0.6em; padding-left: 2px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_clear { clear: both; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles ul li { display: inline-block; }
-#JA_expertProfiles ul.JA_body li { display: block; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_profileInfo { margin-left: 70px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-h1, h2, h3 { font-size: 14px; line-height: 1.3em; }
-h2, h3 { font-size: 1.2em; line-height: 1.3em; }
-h3 { margin-bottom: 0.8075em; }
-#JA_expertProfiles .JA_profileInfo h3 { margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_titleValuePair { line-height: 1.4em; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-#JA_expertProfiles .JA_profileAccepts .JA_value { font-weight: bold; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_miniProfile { margin-left: -70px; padding-top: 0.6em; padding-left: 2px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_clear { clear: both; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles ul li { display: inline-block; }
-#JA_expertProfiles ul.JA_body li { display: block; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_profileInfo { margin-left: 70px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-h1, h2, h3 { font-size: 14px; line-height: 1.3em; }
-h2, h3 { font-size: 1.2em; line-height: 1.3em; }
-h3 { margin-bottom: 0.8075em; }
-#JA_expertProfiles .JA_profileInfo h3 { margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_titleValuePair { line-height: 1.4em; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-#JA_expertProfiles .JA_profileAccepts .JA_value { font-weight: bold; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_miniProfile { margin-left: -70px; padding-top: 0.6em; padding-left: 2px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_clear { clear: both; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles ul li { display: inline-block; }
-#JA_expertProfiles ul.JA_body li { display: block; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_profileInfo { margin-left: 70px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-h1, h2, h3 { font-size: 14px; line-height: 1.3em; }
-h2, h3 { font-size: 1.2em; line-height: 1.3em; }
-h3 { margin-bottom: 0.8075em; }
-#JA_expertProfiles .JA_profileInfo h3 { margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_titleValuePair { line-height: 1.4em; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-#JA_expertProfiles .JA_profileAccepts .JA_value { font-weight: bold; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_miniProfile { margin-left: -70px; padding-top: 0.6em; padding-left: 2px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_clear { clear: both; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles ul li { display: inline-block; }
-#JA_expertProfiles ul.JA_body li { display: block; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_profileInfo { margin-left: 70px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-h1, h2, h3 { font-size: 14px; line-height: 1.3em; }
-h2, h3 { font-size: 1.2em; line-height: 1.3em; }
-h3 { margin-bottom: 0.8075em; }
-#JA_expertProfiles .JA_profileInfo h3 { margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_titleValuePair { line-height: 1.4em; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-#JA_expertProfiles .JA_profileAccepts .JA_value { font-weight: bold; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_miniProfile { margin-left: -70px; padding-top: 0.6em; padding-left: 2px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_clear { clear: both; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles ul li { display: inline-block; }
-#JA_expertProfiles ul.JA_body li { display: block; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_profileInfo { margin-left: 70px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-h1, h2, h3 { font-size: 14px; line-height: 1.3em; }
-h2, h3 { font-size: 1.2em; line-height: 1.3em; }
-h3 { margin-bottom: 0.8075em; }
-#JA_expertProfiles .JA_profileInfo h3 { margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_titleValuePair { line-height: 1.4em; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-#JA_expertProfiles .JA_profileInfo h4 { font-weight: normal; margin-bottom: 0px; padding-bottom: 0px; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_titleValuePair .JA_value, #JA_expertProfiles .JA_titleValuePair h4 { display: inline; }
-#JA_expertProfiles .JA_profileAccepts .JA_value { font-weight: bold; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-#JA_expertProfiles .JA_miniProfile { margin-left: -70px; padding-top: 0.6em; padding-left: 2px; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { background-color: transparent; border: 0px; font-size: 100%; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; }
-.JA_clear { clear: both; }
+#JA_mediaCoverage.JA_mediaInfo dl::after { clear: both; content: ' '; display: block; height: 0px; visibility: hidden; }
+#JA_mediaCoverage.JA_mediaInfo dt .JA_media, #JA_mediaCoverage.JA_mediaInfo dt.JA_active .JA_media { margin: auto; width: 115px; }
+#JA_mediaCoverage.JA_mediaInfo dl dd.JA_mediaQuote { display: none; }
+#JA_testimonials .JA_testimonialQuote { margin: 0px 10px; }
 @media (max-width: 992px){
+#JA_expertProfilesControls, #JA_simpleTestimonialsControls, #JA_relatedTags, #JA_layout_tool_mini, #JA_articlesByExpert { display: none !important; }
 #JA_headerLinks, #JA_container, .JA_column.JA_column_left.JA_moduleContainer.media-coverage, .JA_columns.JA_threeColumns .JA_column.JA_moduleContainer .JA_module { min-width: 0px; padding: 0px; width: 100%; }
-#JA_headerLinks, #JA_container, .JA_column.JA_column_left.JA_moduleContainer.media-coverage, .JA_columns.JA_threeColumns .JA_column.JA_moduleContainer .JA_module { min-width: 0px; padding: 0px; width: 100%; }
-#JA_mainPane .JA_module h2 { margin: 15px 0px 0px 15px !important; }
-#JA_testimonials .JA_round-box, #JA_expertProfiles .JA_round-box, #JA_mediaCoverage .JA_round-box { margin: 5px 10px; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { margin-left: 4px; padding: 0px; width: 16%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { margin-left: 4px; padding: 0px; width: 16%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { margin-left: 4px; padding: 0px; width: 16%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { margin-left: 4px; padding: 0px; width: 16%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { margin-left: 4px; padding: 0px; width: 16%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { margin-left: 4px; padding: 0px; width: 16%; }
-.JA_column.JA_column_left.JA_moduleContainer.testimonials, .JA_column.JA_column_left.JA_moduleContainer.profiles { width: 50%; }
-#JA_headerLinks, #JA_container, .JA_column.JA_column_left.JA_moduleContainer.media-coverage, .JA_columns.JA_threeColumns .JA_column.JA_moduleContainer .JA_module { min-width: 0px; padding: 0px; width: 100%; }
-#JA_mainPane .JA_module h2 { margin: 15px 0px 0px 15px !important; }
 #JA_testimonials .JA_round-box, #JA_expertProfiles .JA_round-box, #JA_mediaCoverage .JA_round-box { margin: 5px 10px; }
 .testimonials .JA_round-box, .profiles .JA_round-box { height: 140px; }
+#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { margin-left: 4px; padding: 0px; width: 16%; }
+.JA_column.JA_column_left.JA_moduleContainer.testimonials, .JA_column.JA_column_left.JA_moduleContainer.profiles { width: 50%; }
+#JA_mainPane .JA_module h2 { margin: 15px 0px 0px 15px !important; }
 #JA_testimonials .JA_testimonialQuote { font-style: italic; }
 #JA_testimonials .JA_testimonialQuote::before { content: open-quote; }
 #JA_testimonials .JA_testimonialQuote::after { content: close-quote; }
 .JA_testimonialName.JA_testimonialInfo::before { content: '- '; }
-#JA_expertProfilesControls, #JA_simpleTestimonialsControls, #JA_relatedTags, #JA_layout_tool_mini, #JA_articlesByExpert { display: none !important; }
-#JA_testimonials .JA_testimonialQuote { font-style: italic; }
-#JA_testimonials .JA_testimonialQuote::before { content: open-quote; }
-#JA_testimonials .JA_testimonialQuote::after { content: close-quote; }
-#JA_testimonials .JA_testimonialQuote { font-style: italic; }
-#JA_testimonials .JA_testimonialQuote::before { content: open-quote; }
-#JA_testimonials .JA_testimonialQuote::after { content: close-quote; }
-#JA_testimonials .JA_testimonialQuote { font-style: italic; }
-#JA_testimonials .JA_testimonialQuote::before { content: open-quote; }
-#JA_testimonials .JA_testimonialQuote::after { content: close-quote; }
-#JA_testimonials .JA_testimonialQuote { font-style: italic; }
-#JA_testimonials .JA_testimonialQuote::before { content: open-quote; }
-#JA_testimonials .JA_testimonialQuote::after { content: close-quote; }
-#JA_testimonials .JA_testimonialQuote { font-style: italic; }
-#JA_testimonials .JA_testimonialQuote::before { content: open-quote; }
-#JA_testimonials .JA_testimonialQuote::after { content: close-quote; }
-#JA_testimonials .JA_testimonialQuote { font-style: italic; }
-#JA_testimonials .JA_testimonialQuote::before { content: open-quote; }
-#JA_testimonials .JA_testimonialQuote::after { content: close-quote; }
-#JA_testimonials .JA_testimonialQuote { font-style: italic; }
-#JA_testimonials .JA_testimonialQuote::before { content: open-quote; }
-#JA_testimonials .JA_testimonialQuote::after { content: close-quote; }
-.JA_column.JA_column_left.JA_moduleContainer.testimonials, .JA_column.JA_column_left.JA_moduleContainer.profiles { width: 50%; }
-#JA_headerLinks, #JA_container, .JA_column.JA_column_left.JA_moduleContainer.media-coverage, .JA_columns.JA_threeColumns .JA_column.JA_moduleContainer .JA_module { min-width: 0px; padding: 0px; width: 100%; }
-#JA_mainPane .JA_module h2 { margin: 15px 0px 0px 15px !important; }
-#JA_testimonials .JA_round-box, #JA_expertProfiles .JA_round-box, #JA_mediaCoverage .JA_round-box { margin: 5px 10px; }
-.testimonials .JA_round-box, .profiles .JA_round-box { height: 140px; }
-#JA_expertProfilesControls, #JA_simpleTestimonialsControls, #JA_relatedTags, #JA_layout_tool_mini, #JA_articlesByExpert { display: none !important; }
 }
 @media (max-width: 768px){
 #JA_mediaCoverage { width: 100%; }
 #JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 32%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 32%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 32%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 32%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 32%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 32%; }
 .testimonials .JA_round-box, .profiles .JA_round-box { height: 200px; padding: 0px; }
 #JA_testimonials .JA_testimonialQuote { margin-top: 10px; }
 #JA_testimonials .JA_testimonialWho { margin-top: 5px; }
-#JA_testimonials .JA_testimonialQuote { margin-top: 10px; }
-#JA_testimonials .JA_testimonialQuote { margin-top: 10px; }
-#JA_testimonials .JA_testimonialQuote { margin-top: 10px; }
-#JA_testimonials .JA_testimonialQuote { margin-top: 10px; }
-#JA_testimonials .JA_testimonialQuote { margin-top: 10px; }
-#JA_testimonials .JA_testimonialQuote { margin-top: 10px; }
-#JA_testimonials .JA_testimonialQuote { margin-top: 10px; }
-.testimonials .JA_round-box, .profiles .JA_round-box { height: 200px; padding: 0px; }
 }
 @media (max-width: 650px){
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 32%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 32%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 32%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 32%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 32%; }
 #JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 32%; }
 }
 @media (max-width: 480px){
 #JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 48%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 48%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 48%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 48%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 48%; }
-#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 48%; }
-.JA_column.JA_column_left.JA_moduleContainer.testimonials, .JA_column.JA_column_left.JA_moduleContainer.profiles { width: 100%; }
 .testimonials .JA_round-box { height: 180px; }
-.JA_column.JA_column_left.JA_moduleContainer.testimonials, .JA_column.JA_column_left.JA_moduleContainer.profiles { width: 100%; }
 .profiles .JA_round-box { height: 150px; }
+.JA_column.JA_column_left.JA_moduleContainer.testimonials, .JA_column.JA_column_left.JA_moduleContainer.profiles { width: 100%; }
 }
 
 </style><div class="JA_columns JA_threeColumns JA_belowQuestionBoxPane">
@@ -631,11 +164,11 @@ I will tell you that...the things you have to go through to be an Expert are qui
 
 <li style="">
 
-<span class="JA_testimonialQuote JA_testimonialInfo">My Expert was fast and seemed to have the answer to my taser question at the tips of her fingers. Communication was excellent. I left feeling confident in her answer.</span> 
+<span class="JA_testimonialQuote JA_testimonialInfo">Lurch. Thank you very much. I had real doubts about this website but your promptness of response, quick followup and to the point answer with picture was incredible.</span> 
 
 <span class="JA_testimonialWho">
-<span class="JA_testimonialName JA_testimonialInfo">Eric</span> 
-<span class="JA_testimonialLocation JA_testimonialInfo">Redwood City, CA</span>
+<span class="JA_testimonialName JA_testimonialInfo">Charles</span> 
+<span class="JA_testimonialLocation JA_testimonialInfo">Walnut Creek, CA</span>
 </span>
 </li>
 
@@ -655,46 +188,48 @@ I will tell you that...the things you have to go through to be an Expert are qui
 <ul id="JA_simpleTestimonialsOthers" class="JA_hiddenElement">
 
 <li>
-<span class="JA_testimonialQuote">Mr. Kaplun clearly had an exceptional understanding of the issue and was able to explain it concisely. I would recommend JustAnswer to anyone. Great service that lives up to its promises!</span>
-<span class="JA_testimonialName">Gary B.</span> 
-<span class="JA_testimonialLocation">Edmond, OK</span>
+<span class="JA_testimonialQuote">I would (and have) recommend your site to others I was quite satisfied with the quality of the information received, the professional with whom I interacted, and the quick response time. Thanks, and be sure that I'll be back whenever I need a question answered in a hurry.</span>
+<span class="JA_testimonialName">Stephanie P</span> 
+<span class="JA_testimonialLocation">Elm City, NC</span>
 </li>
 
 <li>
-<span class="JA_testimonialQuote">My Expert was fast and seemed to have the answer to my taser question at the tips of her fingers. Communication was excellent. I left feeling confident in her answer.</span>
-<span class="JA_testimonialName">Eric</span> 
-<span class="JA_testimonialLocation">Redwood City, CA</span>
+<span class="JA_testimonialQuote">used your service this weekend with "Trecers" help. thank you ,thank you, thank you. replaced an A/C fan motor. Local Auto Zone had part. $15.00 "tracer" fee and $40.00 for parts, I saved several hundreds of dollers at a shop. i will 
+recommend you and use you in the future.</span>
+<span class="JA_testimonialName">David L.</span> 
+<span class="JA_testimonialLocation">Richmond, TX</span>
 </li>
 
 <li>
-<span class="JA_testimonialQuote">I am very pleased with JustAnswer as a place to go for divorce or criminal law knowledge and insight. 
+<span class="JA_testimonialQuote">9 dollars, 2 hours of my time, and I drove away. Your diagnosis was right on the mark. Thank you so much. </span>
+<span class="JA_testimonialName">Phil</span> 
+<span class="JA_testimonialLocation">Marysville, CA</span>
+</li>
+
+<li>
+<span class="JA_testimonialQuote">Lurch. Thank you very much. I had real doubts about this website but your promptness of response, quick followup and to the point answer with picture was incredible.</span>
+<span class="JA_testimonialName">Charles</span> 
+<span class="JA_testimonialLocation">Walnut Creek, CA</span>
+</li>
+
+<li>
+<span class="JA_testimonialQuote">As a single woman, I really appreciate an excellent and affordable opinion. <br> Thank you Geordie, I will not hesitate to contact justanswer in the future!</span>
+<span class="JA_testimonialName">Sue</span> 
+<span class="JA_testimonialLocation">Charleston, WV</span>
+</li>
+
+<li>
+<span class="JA_testimonialQuote">Another great insight to what may be the problem. I will
+have my mechanic take a look at it tomorrow. Thanks again, Frank...you do indeed know your stuff. </span>
+<span class="JA_testimonialName">Jim</span> 
+<span class="JA_testimonialLocation">Castleberry, FL</span>
+</li>
+
+<li>
+<span class="JA_testimonialQuote">The nearest Volvo dealer is 160 miles away. Best $15 bucks I have spent in a long time!
 </span>
-<span class="JA_testimonialName">Michael</span> 
-<span class="JA_testimonialLocation">Wichita, KS</span>
-</li>
-
-<li>
-<span class="JA_testimonialQuote">PaulMJD helped me with questions I had regarding an urgent legal matter. His answers were excellent. </span>
-<span class="JA_testimonialName">Three H.</span> 
-<span class="JA_testimonialLocation">Houston, TX</span>
-</li>
-
-<li>
-<span class="JA_testimonialQuote">Anne was extremely helpful. Her information put me in the right direction for action that kept me legal, possible saving me a ton of money in the future. Thank you again, Anne!! </span>
-<span class="JA_testimonialName">Elaine</span> 
-<span class="JA_testimonialLocation">Atlanta, GA</span>
-</li>
-
-<li>
-<span class="JA_testimonialQuote">It worked great. I had the facts and I presented them to my ex-landlord and she folded and returned my deposit. The 50 bucks I spent with you solved my problem. </span>
-<span class="JA_testimonialName">Tony</span> 
-<span class="JA_testimonialLocation">Apopka, FL</span>
-</li>
-
-<li>
-<span class="JA_testimonialQuote">Not only did he answer my Michigan divorce question but was also able to help me out with it, too. I have since won my legal case on this matter and thank you so much for it. </span>
-<span class="JA_testimonialName">Lee</span> 
-<span class="JA_testimonialLocation">Michigan</span>
+<span class="JA_testimonialName">Paul M</span> 
+<span class="JA_testimonialLocation">Corpus Christi, TX</span>
 </li>
 
 </ul>
@@ -713,24 +248,24 @@ I will tell you that...the things you have to go through to be an Expert are qui
 
 <li style="display: block;">
 <div class="JA_avatarHolder">
-<img class="JA_avatar" src="http://ww2.justanswer.com/uploads/RA/ratioscripta/2012-6-13_2955_foto3.64x64.jpg" alt="Ely's Avatar" width="64" height="64" title="Ely's Avatar" onerror="$(this).hide();return false;">
+<img class="JA_avatar" src="http://ww2.justanswer.com/uploads/AM/amedee/2013-10-24_23656_Amedee1.64x64.jpg" alt="Amedee's Avatar" width="64" height="64" title="Amedee's Avatar" onerror="$(this).hide();return false;">
 </div>
 
 <div class="JA_profileInfo">
 <h3>
-Ely
+Amedee
 
 </h3> 
-<h4>Counselor at Law</h4> 
+<h4>ASE Master Tech</h4> 
 <div class="JA_profileAccepts JA_titleValuePair">
 <h4 class="JA_title">Satisfied Customers:</h4>
 <div class="JA_value">
-19419
+2367
 
 </div> 
 </div>
 
-<div class="JA_miniProfile JA_verifiedProfile">Private practice with focus on family, criminal, PI, consumer protection, and business consultation.</div>
+<div class="JA_miniProfile">ASE Master Tech advanced level specialist</div>
 
 </div>
 <div class="JA_clear"></div>
@@ -753,161 +288,161 @@ Ely
 <ul id="JA_expertProfilesAll" class="JA_hiddenElement JA_body">
 
 <li>
-<span class="JA_avatarURI">http://ww2.justanswer.com/uploads/MU/multistatelaw/2011-11-27_173951_Tinaglamourshotworkglow102011.64x64.jpg</span>
-<span class="JA_avatarTitle">Tina's Avatar</span>
+<span class="JA_avatarURI">http://ww2.justanswer.com/uploads/MU/muddyford/2012-6-13_1204_1.64x64.png</span>
+<span class="JA_avatarTitle">Chris (aka-Moose)'s Avatar</span>
 <div class="JA_profileInfo">
 <h3>
-Tina
+Chris (aka-Moose)
 
 </h3> 
-<h4>Lawyer</h4> 
+<h4>Technician</h4> 
 <div class="JA_profileAccepts JA_titleValuePair">
 <h4 class="JA_title">Satisfied Customers:</h4>
 <div class="JA_value">
-8201
+846
 
 </div> 
 </div>
 
-<div class="JA_miniProfile JA_verifiedProfile">JD, BBA Over 25 years legal and business experience.</div>
+<div class="JA_miniProfile">16 years of experience</div>
 
 </div>
 <div class="JA_clear"></div>
 </li>
 
 <li>
-<span class="JA_avatarURI">http://ww2.justanswer.com/uploads/RA/ratioscripta/2012-6-13_2955_foto3.64x64.jpg</span>
-<span class="JA_avatarTitle">Ely's Avatar</span>
+<span class="JA_avatarURI">http://ww2.justanswer.com/uploads/TE/TedG/2012-6-15_14759_avaLarge.64x64.jpg</span>
+<span class="JA_avatarTitle">Ted G.'s Avatar</span>
 <div class="JA_profileInfo">
 <h3>
-Ely
+Ted G.
 
 </h3> 
-<h4>Counselor at Law</h4> 
+<h4>ASE Certified Technician</h4> 
 <div class="JA_profileAccepts JA_titleValuePair">
 <h4 class="JA_title">Satisfied Customers:</h4>
 <div class="JA_value">
-19419
+1596
 
 </div> 
 </div>
 
-<div class="JA_miniProfile JA_verifiedProfile">Private practice with focus on family, criminal, PI, consumer protection, and business consultation.</div>
+<div class="JA_miniProfile">20 years auto repair experience, ASE Master Tech, Mechanical Failure consultant, Expert Witness</div>
 
 </div>
 <div class="JA_clear"></div>
 </li>
 
 <li>
-<span class="JA_avatarURI">http://ww2.justanswer.com/uploads/FL/FLAandNYLawyer/2012-1-27_14349_3Fotolia25855429M.64x64.jpg</span>
-<span class="JA_avatarTitle">FiveStarLaw's Avatar</span>
+<span class="JA_avatarURI">http://ww2.justanswer.com/uploads/joecamel90/2008-11-13_03615_head_shot.jpg</span>
+<span class="JA_avatarTitle">George H.'s Avatar</span>
 <div class="JA_profileInfo">
 <h3>
-FiveStarLaw
+George H.
 
 </h3> 
-<h4>Attorney</h4> 
+<h4>ASE Certified Technician</h4> 
 <div class="JA_profileAccepts JA_titleValuePair">
 <h4 class="JA_title">Satisfied Customers:</h4>
 <div class="JA_value">
-8122
+1311
 
 </div> 
 </div>
 
-<div class="JA_miniProfile JA_verifiedProfile">25 years of experience helping people like you.</div>
+<div class="JA_miniProfile">ASE Master Tech 15+ yrs, AAS Automotive Technology, Factory trained Asian specialist</div>
 
 </div>
 <div class="JA_clear"></div>
 </li>
 
 <li>
-<span class="JA_avatarURI">http://ww2.justanswer.com/uploads/jespoag/2008-12-17_222355_jessepic.jpg</span>
-<span class="JA_avatarTitle">JPEsq's Avatar</span>
+<span class="JA_avatarURI">http://ww2.justanswer.com/uploads/AM/amedee/2013-10-24_23656_Amedee1.64x64.jpg</span>
+<span class="JA_avatarTitle">Amedee's Avatar</span>
 <div class="JA_profileInfo">
 <h3>
-JPEsq
+Amedee
 
 </h3> 
-<h4>Attorney</h4> 
+<h4>ASE Master Tech</h4> 
 <div class="JA_profileAccepts JA_titleValuePair">
 <h4 class="JA_title">Satisfied Customers:</h4>
 <div class="JA_value">
-2131
+2367
 
 </div> 
 </div>
 
-<div class="JA_miniProfile JA_verifiedProfile">Experience as general attorney, in house counsel, SSDI, Family Law attorney, and law professor</div>
+<div class="JA_miniProfile">ASE Master Tech advanced level specialist</div>
 
 </div>
 <div class="JA_clear"></div>
 </li>
 
 <li>
-<span class="JA_avatarURI">http://ww2.justanswer.com/uploads/gsenmartin/2008-04-22_214950_me1.jpg</span>
-<span class="JA_avatarTitle">Guillermo J. Senmartin, Esq.'s Avatar</span>
+<span class="JA_avatarURI">http://ww2.justanswer.com/uploads/SU/supermechanic/2013-8-23_03546_500.64x64.jpg</span>
+<span class="JA_avatarTitle">Jerry's Avatar</span>
 <div class="JA_profileInfo">
 <h3>
-Guillermo J. Senmartin, Esq.
+Jerry
 
 </h3> 
-<h4>Attorney</h4> 
+<h4>Master Mechanic</h4> 
 <div class="JA_profileAccepts JA_titleValuePair">
 <h4 class="JA_title">Satisfied Customers:</h4>
 <div class="JA_value">
-83
+1906
 
 </div> 
 </div>
 
-<div class="JA_miniProfile JA_verifiedProfile">7+ years of experience handling various legal matters.</div>
+<div class="JA_miniProfile">ASE master, 30+ years. All makes and models. Trouble shooter, shop forman, service manager</div>
 
 </div>
 <div class="JA_clear"></div>
 </li>
 
 <li>
-<span class="JA_avatarURI">http://ww2.justanswer.com/uploads/PA/PaulmoJD/2013-10-10_195858_JAImage.64x64.jpg</span>
-<span class="JA_avatarTitle">Law Educator, Esq.'s Avatar</span>
+<span class="JA_avatarURI">http://ww2.justanswer.com/uploads/CR/crzydrvr00/2013-11-3_12123_246347.64x64.jpg</span>
+<span class="JA_avatarTitle">Richard's Avatar</span>
 <div class="JA_profileInfo">
 <h3>
-Law Educator, Esq.
+Richard
 
 </h3> 
-<h4>Attorney</h4> 
+<h4>ASE Certified Technician</h4> 
 <div class="JA_profileAccepts JA_titleValuePair">
 <h4 class="JA_title">Satisfied Customers:</h4>
 <div class="JA_value">
-30758
+942
 
 </div> 
 </div>
 
-<div class="JA_miniProfile JA_verifiedProfile">JA Mentor -Attorney Labor/employment, corporate, sports law, admiralty/maritime and civil rights law</div>
+<div class="JA_miniProfile">12 years Ford Lincoln/Mercury Jaguar dealership as a technician and shop foreman reparing all makes</div>
 
 </div>
 <div class="JA_clear"></div>
 </li>
 
 <li>
-<span class="JA_avatarURI">http://ww2.justanswer.com/uploads/dkaplun/2009-05-17_173121_headshot_1_2.jpg</span>
-<span class="JA_avatarTitle">Dimitry K., Esq.'s Avatar</span>
+<span class="JA_avatarURI">http://ww2.justanswer.com/uploads/ST/Steve7654/2012-6-5_215929_japic800x660.64x64.jpg</span>
+<span class="JA_avatarTitle">Steve's Avatar</span>
 <div class="JA_profileInfo">
 <h3>
-Dimitry K., Esq.
+Steve
 
 </h3> 
-<h4>Attorney</h4> 
+<h4>Auto Service Technician</h4> 
 <div class="JA_profileAccepts JA_titleValuePair">
 <h4 class="JA_title">Satisfied Customers:</h4>
 <div class="JA_value">
-15340
+1980
 
 </div> 
 </div>
 
-<div class="JA_miniProfile JA_verifiedProfile">Multiple jurisdictions, specialize in business/contract disputes, estate creation and administration.</div>
+<div class="JA_miniProfile">25+ yrs experience as a professional working technician; ASE L1 master technician</div>
 
 </div>
 <div class="JA_clear"></div>

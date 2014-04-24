@@ -1,7 +1,8 @@
 
 
 	var rules = {};
-	
+	var rulesCount=0;
+
 		function processSheet(sheet, media, mediaText){
 
 			//console.log('sheet', sheet);
@@ -37,7 +38,7 @@
 				}
 				
 				var elementSelectorRules = rules[elementSelectorText] || [];
-				elementSelectorRules.push({ 'href' : href, 'mediaText' : mediaText, 'rule': rule});
+				elementSelectorRules.push({ 'href' : href, 'mediaText' : mediaText, 'rule': rule, order: rulesCount++});
 				rules[elementSelectorText] = elementSelectorRules;
 
 				//console.log('style rule', elementSelectorText, href, mediaText, rule.selectorText);
@@ -47,14 +48,15 @@
 
 			// font-face don't has rule.media therefore should be skipped for now
 
-			if( typeof(rule.media) == 'undefined'){
-				console.log('missing media for ',rule);
-				return;
-			}
+			//if( typeof(rule.media) == 'undefined'){
+				//console.log('missing media for ',rule);
+				//return;
+			//}
 
-			var ruleMediaText = mediaText && rule.media.mediaText
-								? mediaText + ' and ' + rule.media.mediaText
-								: mediaText+ rule.media.mediaText;
+			var ruleMediaText = typeof rule.media == 'undefined' ? '' : rule.media.mediaText;
+			    ruleMediaText = mediaText && ruleMediaText
+								? mediaText + ' and ' + ruleMediaText
+								: mediaText+ ruleMediaText;
 
 			//console.log('media for media or import',ruleMediaText, ',', mediaText, ',',rule.media.mediaText);
 
@@ -88,33 +90,37 @@
 			//console.log('all document rules', rules);
 		}
 
-		function processElementRules(child, matchedSelectors){
+		function processElementRules(element, rule, matchedSelectors){
 
 			// skip #text nodes
-			if( typeof(child.matches) == 'undefined' ) return;
+			if( typeof(element.matches) == 'undefined' ) return false;
 
-			for(var rule in rules){
-											
-				if( rule!='' && child.matches(rule) ){
-					//console.log('element rule', child, rule);
+			if(element.matches(rule) ){
+					//console.log('element rule', element, rule);
 					matchedSelectors.push(rule);
-				};
-			}
-
-			return matchedSelectors;
-		}
-
-		function processElement(element, matchedSelectors){
-			
-			//console.log('element', element);
-
-			processElementRules(element, matchedSelectors);
+					return true;
+			};
 
 			if(element.hasChildNodes()){
 				for(var i=0; i<element.childNodes.length;i++){
 					var childElement = element.childNodes[i];
-					processElement(childElement, matchedSelectors);
+					var matched = processElementRules(childElement, rule, matchedSelectors);
+					if(matched) return true;
 				}
+			}
+
+			return false;
+		}
+
+		function processElement(element, matchedSelectors){
+
+			//console.log('element', element);
+
+			for(var rule in rules){
+				if( rule!=''){
+					//console.log('check rule for element ', element, rule);
+					processElementRules(element, rule, matchedSelectors);
+				};
 			}
 			
 			return matchedSelectors;
@@ -139,7 +145,7 @@
 				}	
 			}
 
-			return matchedRules;
+			return matchedRules.sort(function(a, b) {return a.order - b.order; });
 		}
 
 		function getElementStylesGroupedByMediaText(element){
@@ -150,22 +156,31 @@
 
 			var elementRules = getMatchedRules(selectors);
 
-			//console.log('all rules matched to element', element, elementRules);
+			console.log('all rules matched to element', element, elementRules);
 
-			var rulesGroupedByMediaText = {};
+			var rulesGroupedByMediaText = [];
+
+			var current = { MediaText : '', Rules : [] };
+			
 
 			for(var i=0; i<elementRules.length;i++){
 
 					var rule = elementRules[i];
 					var mediaText = rule.mediaText || '';
 
-					var rulesByMedia = rulesGroupedByMediaText[mediaText] || [];
-
-					rulesByMedia.push(rule.rule.cssText);
-
-					rulesGroupedByMediaText[mediaText] = rulesByMedia;
+					if(mediaText != current.MediaText) {
+						if(current.Rules.length>0){
+							rulesGroupedByMediaText.push(current);
+						}
+						current = { MediaText : mediaText, Rules : [] };
+					}
+											
+					current.Rules.push(rule.rule.cssText);
+					
 					//console.log('rule with media', mediaText, ',' , rule.rule.selectorText);
 			}
+
+			rulesGroupedByMediaText.push(current);
 
 			return rulesGroupedByMediaText;
 		}
@@ -177,9 +192,11 @@
 			var stylesGroupedByMediaText = getElementStylesGroupedByMediaText(element);
 			//console.log('element styles', element, stylesGroupedByMediaText);
 
-			for(var mediaText in stylesGroupedByMediaText){
+			for(var i=0;i<stylesGroupedByMediaText.length;i++){
 
-				var cssByMedia = stylesGroupedByMediaText[mediaText].join('\r\n')+'\r\n';
+				var mediaText = stylesGroupedByMediaText[i].MediaText;
+
+				var cssByMedia = stylesGroupedByMediaText[i].Rules.join('\r\n')+'\r\n';
 
 				if(mediaText!=''){
 
@@ -196,7 +213,7 @@
 
 			processDocumentSheets();
 
-		var selector = prompt("Enter an element's selector",'');
+		var selector = '.lso';//'.default';//prompt("Enter an element's selector",'');
 
 			var elements = $(selector);
 			
@@ -210,10 +227,23 @@
 			var html = element.outerHTML;
 
 			var source = "<style>\r\n"+css+"\r\n</style>"+html;
+			source = source.replace(/url\(\//ig, 'url('+document.location.origin+'/');
+			source = source.replace(/src=\"\//ig, 'src="'+document.location.origin+'/');
+			source = source.replace(/src=\i\//ig, 'src=\''+document.location.origin+'/');
+
 			console.log(source);
 			
-			document.body.innerText = source;
 			
+			document.body.innerText = source;
+
+			return;
+			var iframe = document.createElement('iframe');
+			var html = '<body>Foo</body>';
+			document.body.appendChild(iframe);
+			iframe.contentWindow.document.open();
+			iframe.contentWindow.document.write(source);
+			iframe.contentWindow.document.close();
+						
 		}
 
 	$(document).ready(function(){

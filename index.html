@@ -11,12 +11,21 @@
 			text-decoration: underline;
 		}
 
+		.default b, .default p {
+			font-size: 20px;
+		}
+
+		.default b{
+			font-size: 10px;
+		}
+
 		.default b:hover:first-child {
 			background: orange;
 		}
 
 		.default b:hover:first-child:after {
-			background: orange;
+			background: pink;
+			content: "after";
 		}
 
 		.default p{
@@ -44,7 +53,23 @@
 		    }
 		}
 
+		.default p {
+	    	background: gray;
+	    }
 
+ 		@font-face {
+           font-style: italic;
+        }
+
+
+
+		/* FOR RESULT */
+		iframe{ 
+			height: 400px;
+			margin: 30px 0;
+			width: 100%;
+
+		}
 	</style>
 
 	<script src="script.js">
