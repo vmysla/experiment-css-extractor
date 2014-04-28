@@ -1,4 +1,3 @@
-
 	var rules = {};
 	var rulesCount=0;
 
@@ -55,7 +54,8 @@
 			}
 
 			// font-face don't has rule.media therefore should be skipped for now
-
+			// todo: define list of global rules, fonts should be added there automatically
+			
 			//if( typeof(rule.media) == 'undefined'){
 				//console.log('missing media for ',rule);
 				//return;
@@ -140,8 +140,26 @@
 
 		function doubleCheckElementRule(rootElement, element, rule, matchedSelectors){
 			
-			//TODO: process combined rules
-			if(rule.indexOf(',')>=0) return rule;
+			
+			if(rule.indexOf(',')>=0){
+
+				// process combined (complex) rules
+				var rules = rule.split(', ');
+				for(var i=0;i<rules.length;i++){
+
+					console.log('processing one of complex rules [', rules[i],']');
+
+					try{
+						doubleCheckElementRule(rootElement, element, rules[i], matchedSelectors);	
+					}
+					catch(e){
+						console.log(e);
+					}
+					
+				}
+				return rule;
+				
+			} 
 			
 			//console.log('double check ', element, rule, rules[rule]);
 
