@@ -34,6 +34,8 @@
 					console.log('complex specificity ', rule.selectorText, rule, elementSelectorSpecificities);
 				}
 
+				//todo: save specificity for complex rules
+
 				var elementSelectorSpecificity=elementSelectorSpecificities[0];
 				elementSelectorSpecificity.values = elementSelectorSpecificity.specificity.split(',');
 
@@ -332,11 +334,13 @@
 					//console.log('all selectors out of context that should be fixed:',selectorsOutOfContext);
 					for(var j=0; j<selectorsOutOfContext.length;j++){
 						var selector = selectorsOutOfContext[j];
-						if(css.indexOf(selector.original + ' {')==0){
+						
+						if(css.indexOf(selector.original + ' {')>=0 ||
+							css.indexOf(selector.original + ',')>=0 ){
 							css = css.replace(selector.original, '.snippet '+selector.relation +selector.child);
 							//todo: build parent based on SPECIFICITY
 							console.log('removed context for selector', selector.original, ' => .snippet ', selector.relation ,selector.child);
-							break;
+							
 						}
 					}						
 					current.Rules.push(css);
