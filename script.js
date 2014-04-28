@@ -386,9 +386,26 @@
 						if(css.indexOf(selector.original + ' {')>=0 ||
 							css.indexOf(selector.original + ',')>=0 ){
 							//todo: maybe ignore relation
-							var newContext = 'section#'+id+'.snippet';
+
+							// build parent based on SPECIFICITY 
+							// todo: somehow handle situation when some part of specificity > 1..
+							var specificity = s(selector.parent).r;
+
+							var newContext = '';
+							
+							if(specificity[1]>0){ // id
+								newContext = '#'+id;
+							}
+
+							if(specificity[2]>0){ // class or attr or pseudo-selectors
+								newContext = newContext+'.snippet';
+							}
+
+							if(specificity[3]>0){ // class or attr or pseudo-selectors
+								newContext = 'section'+newContext;
+							}
+
 							css = css.replace(selector.original, newContext+' '+selector.relation +selector.child);
-							//todo: build parent based on SPECIFICITY 
 							console.log('removed context for selector', selector.original, ' => ',newContext,' ', selector.relation ,selector.child);
 							
 						}
