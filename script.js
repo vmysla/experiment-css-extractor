@@ -1,5 +1,6 @@
 	var rules = {};
 	var rulesCount=0;
+	var globalCss = "";
 
 		function processSheet(sheet, media, mediaText){
 
@@ -21,7 +22,7 @@
 
 			mediaText = mediaText=='all' ? '' : mediaText;
 
-			//console.log('rule', rule);
+			//console.log('rule', rule, typeof(rule) ;
 
 			if( typeof rule_selectorText != 'undefined' ){
 				// style rule
@@ -66,10 +67,16 @@
 			// font-face don't has rule.media therefore should be skipped for now
 			// todo: define list of global rules, fonts should be added there automatically
 			
-			//if( typeof(rule.media) == 'undefined'){
-				//console.log('missing media for ',rule);
-				//return;
-			//}
+			if( rule.type == 5){ //'CSSFontFaceRule'
+				console.log('global font-face rule ',rule);
+				globalCss += (rule.cssText +'\r\n');
+				return;
+			}
+
+			if( typeof(rule.media) == 'undefined'){
+				console.log('missing media for ',rule );
+				return;
+			}
 
 			var ruleMediaText = typeof rule.media == 'undefined' ? '' : rule.media.mediaText;
 			    ruleMediaText = mediaText && ruleMediaText
@@ -424,6 +431,8 @@
 		function getElementCss(element,id){
 
 			var css = '';
+			//console.log('global css',globalCss);
+			css += globalCss;
 
 			var stylesGroupedByMediaText = getElementStylesGroupedByMediaText(element,id);
 			//console.log('element styles', element, stylesGroupedByMediaText);
