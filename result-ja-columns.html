@@ -11,14 +11,15 @@ p, h4 { font-size: 1em; line-height: 1.615; padding-bottom: 0.8075em; }
 a { color: rgb(27, 146, 171); }
 a:hover, a.JA_hover { color: rgb(255, 153, 0); }
 .JA_hiddenElement, .hidden, .JA_hidden, #JA_javascript, .JA_javascript { display: none; }
+#JA_container::after, #container::after, #JA_bodyContent::after, .JA_button_container::after, .JA_clearfix::after, .JA_columns::after { clear: both; content: ' '; display: block; height: 0px; visibility: hidden; }
 .JA_columns .JA_column, .JA_columns .JA_column_left { float: left; }
 .JA_clear { clear: both; }
 .JA_module .JA_body { padding: 0px; }
 .JA_module .JA_body { padding: 0px; }
 .JA_module h2 { font-size: 1.1em; margin: 0px 0px 0.4em 14px; }
 .JA_module .JA_cycleControls { padding: 8px 8px 0px 0px; text-align: right; }
-#JA_mainPane .JA_module p, #JA_mainPane .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
-.snippet #JA_testimonials .JA_body { min-height: 170px; padding: 0px; }
+#JA_mainPane .JA_module p, section#id-bb7df795-6fc6-42e8-a49a-ca83a8ddced0.snippet .JA_module h4 { font-size: 1em; line-height: 1.3em; margin-bottom: 0px; }
+section#id-bb7df795-6fc6-42e8-a49a-ca83a8ddced0.snippet #JA_testimonials .JA_body { min-height: 170px; padding: 0px; }
 #JA_testimonials .JA_body { min-height: 150px; padding: 10px; height: auto !important; }
 #JA_testimonials h2 { margin: 0px 0px 0.4em 10px; }
 #JA_testimonials ul li { display: inline; overflow: hidden; }
@@ -66,8 +67,37 @@ a:hover, a.JA_hover { color: rgb(255, 153, 0); }
 #JA_mediaCoverage.JA_mediaInfo dt .JA_media, #JA_mediaCoverage.JA_mediaInfo dt.JA_active .JA_media { margin: auto; width: 115px; }
 #JA_mediaCoverage.JA_mediaInfo dl dd.JA_mediaQuote { display: none; }
 #JA_testimonials .JA_testimonialQuote { margin: 0px 10px; }
+@media (max-width: 992px){
+#JA_expertProfilesControls, #JA_simpleTestimonialsControls, #JA_relatedTags, #JA_layout_tool_mini, #JA_articlesByExpert { display: none !important; }
+#JA_headerLinks, #JA_container, .JA_column.JA_column_left.JA_moduleContainer.media-coverage, .JA_columns.JA_threeColumns .JA_column.JA_moduleContainer .JA_module { min-width: 0px; padding: 0px; width: 100%; }
+#JA_testimonials .JA_round-box, #JA_expertProfiles .JA_round-box, #JA_mediaCoverage .JA_round-box { margin: 5px 10px; }
+.testimonials .JA_round-box, .profiles .JA_round-box { height: 140px; }
+#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { margin-left: 4px; padding: 0px; width: 16%; }
+.JA_column.JA_column_left.JA_moduleContainer.testimonials, .JA_column.JA_column_left.JA_moduleContainer.profiles { width: 50%; }
+section#id-bb7df795-6fc6-42e8-a49a-ca83a8ddced0.snippet .JA_module h2 { margin: 15px 0px 0px 15px !important; }
+#JA_testimonials .JA_testimonialQuote { font-style: italic; }
+#JA_testimonials .JA_testimonialQuote::before { content: open-quote; }
+#JA_testimonials .JA_testimonialQuote::after { content: close-quote; }
+.JA_testimonialName.JA_testimonialInfo::before { content: '- '; }
+}
+@media (max-width: 768px){
+#JA_mediaCoverage { width: 100%; }
+#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 32%; }
+.testimonials .JA_round-box, .profiles .JA_round-box { height: 200px; padding: 0px; }
+#JA_testimonials .JA_testimonialQuote { margin-top: 10px; }
+#JA_testimonials .JA_testimonialWho { margin-top: 5px; }
+}
+@media (max-width: 650px){
+#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 32%; }
+}
+@media (max-width: 480px){
+#JA_mediaCoverage.JA_mediaInfo dt.JA_mediaLogo { width: 48%; }
+.testimonials .JA_round-box { height: 180px; }
+.profiles .JA_round-box { height: 150px; }
+.JA_column.JA_column_left.JA_moduleContainer.testimonials, .JA_column.JA_column_left.JA_moduleContainer.profiles { width: 100%; }
+}
 
-</style><section class="snippet"><div class="JA_columns JA_threeColumns JA_belowQuestionBoxPane">
+</style><section id="id-bb7df795-6fc6-42e8-a49a-ca83a8ddced0" class="snippet"><div class="JA_columns JA_threeColumns JA_belowQuestionBoxPane">
 
 <div class="JA_column JA_column_left JA_moduleContainer media-coverage">
 <div id="JA_mediaCoverage" class="JA_module JA_mediaInfo">
@@ -135,13 +165,14 @@ What Customers are Saying:</h2>
 
 <ul id="JA_simpleTestimonialsShowing">
 
-<li>
+<li style="">
 
-<span class="JA_testimonialQuote JA_testimonialInfo">I would (and have) recommend your site to others I was quite satisfied with the quality of the information received, the professional with whom I interacted, and the quick response time. Thanks, and be sure that I'll be back whenever I need a question answered in a hurry.</span> 
+<span class="JA_testimonialQuote JA_testimonialInfo">used your service this weekend with "Trecers" help. thank you ,thank you, thank you. replaced an A/C fan motor. Local Auto Zone had part. $15.00 "tracer" fee and $40.00 for parts, I saved several hundreds of dollers at a shop. i will 
+recommend you and use you in the future.</span> 
 
 <span class="JA_testimonialWho">
-<span class="JA_testimonialName JA_testimonialInfo">Stephanie P</span> 
-<span class="JA_testimonialLocation JA_testimonialInfo">Elm City, NC</span>
+<span class="JA_testimonialName JA_testimonialInfo">David L.</span> 
+<span class="JA_testimonialLocation JA_testimonialInfo">Richmond, TX</span>
 </span>
 </li>
 
@@ -149,7 +180,7 @@ What Customers are Saying:</h2>
 
 </div>
 
-<div id="JA_simpleTestimonialsControls" class="JA_cycleControls">
+<div id="JA_simpleTestimonialsControls" class="JA_cycleControls" style="display: block;">
 
 &lt; <a id="JA_lastTestimonial" class="JA_lastCycler noexit" rel="nofollow" href="javascript:;" style="display: inline;">Last</a> |
 
@@ -220,27 +251,26 @@ Meet The Experts:</h2>
 
 <ul id="JA_expertProfilesShowing" class="JA_body">
 
-<li style="opacity: 0.99778098230154;">
+<li style="display: block;">
 <div class="JA_avatarHolder">
-<img class="JA_avatar" src="http://ww2.justanswer.com/uploads/MU/muddyford/2012-6-13_1204_1.64x64.png" alt="Chris (aka-Moose)'s Avatar" width="64" height="64" title="Chris (aka-Moose)'s Avatar" onerror="$(this).hide();return false;">
+<img class="JA_avatar" src="http://ww2.justanswer.com/uploads/joecamel90/2008-11-13_03615_head_shot.jpg" alt="George H.'s Avatar" width="64" height="64" title="George H.'s Avatar" onerror="$(this).hide();return false;">
 </div>
 
 <div class="JA_profileInfo">
 <h3>
-Chris (aka-Moose)
+George H.
 
 </h3> 
-<h4>Technician</h4>
+<h4>ASE Certified Technician</h4> 
 <div class="JA_profileAccepts JA_titleValuePair">
 <h4 class="JA_title">Satisfied Customers:</h4>
 <div class="JA_value">
-846
+1311
 
+</div> 
 </div>
-</div>
 
-
-<div class="JA_miniProfile">16 years of experience</div>
+<div class="JA_miniProfile">ASE Master Tech 15+ yrs, AAS Automotive Technology, Factory trained Asian specialist</div>
 
 </div>
 <div class="JA_clear"></div>

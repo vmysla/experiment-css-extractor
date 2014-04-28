@@ -15,43 +15,6 @@ http://stackoverflow.com/questions/11429568/to-get-the-right-media-queries-to-co
 
 TODO:
 - fonts, keyframes, etc?
-- remove duplicated rules
-- parent backgoround color, em, emr, opacitym zoom
-- remove parent tags-related-rules from filtered selectors
-- fo through rules vs elements OR remember order
-- immadiate elements order, next
-- em, emr
-- parrent background,opacity, z-index
-- rewrite relative to parent rules "? > c", "? + c"
-
-
-
-<A>
-  <B>
-    <C>
-      <B>
-        <C>
-
-
-x- a b c b c - no 1 rule
-x- a b c - no 1 rule
-
-<A>
-  <B>
-    <A>
-      <B>
-        <C>
-
-
-x- a b - no 1 rule
-x- a c - no 1 rule
-
-
-  <B>
-    <C>
-      <B>
-        <C>
-
-x- b c b
-b c
+- parent backgoround color, em, emr, opacity, z-index, zoom
+- calculate em, emr values
 

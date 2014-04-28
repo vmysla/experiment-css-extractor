@@ -1,6 +1,6 @@
 <html>
   <head>
-  	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+  	<script src="jquery-2.1.0.js"></script>
   	<script src="specificity.js"></script>
 	
 
@@ -72,6 +72,10 @@
 
 		.parent #default p, div .default b, * .default p{
 			font-size: 20px;
+		}
+
+		p:hover, p.default {
+			line-height: 15px;
 		}
 
 
@@ -151,16 +155,38 @@
   </head>
   <body>
 
+
+
   	<div class="parent">
 
   		<span>span outside of element</span>
 
 	  	<div id="default" class="default" onclick="processDocument();">
 	  		<b>text</b>
-	  		<p>text</p>
+	  		<p class="default">text</p>
 	  		<i>text</i>
 	  		<span>span</span>
+
+	  	</div>
+
+  	</div>
+
+
+ 
+
+
 <!--
+
+  	<div class="parent">
+
+  		<span>span outside of element</span>
+
+	  	<div id="default" class="default" onclick="processDocument();">
+	  		<b>text</b>
+	  		<p class="default">text</p>
+	  		<i>text</i>
+	  		<span>span</span>
+
 	  		<div class="parent">
 	  			<p>p</p>
 	  		</div>
@@ -170,10 +196,21 @@
 	  			<p>p</p>
 	  		</div>
 	  		</div>
--->
+
 	  	</div>
 
   	</div>
+  	
+-->
+<!--
+  	<div class="parent">
 
+	  	<div id="default" class="default" onclick="processDocument();">
+	  		<b>text</b>
+	  		<p class="default">text</p>
+	  	</div>
+
+  	</div>
+-->
   </body>
 </html>

@@ -11,27 +11,35 @@
 
 			for (var i = 0; i < sheet.cssRules.length; i++) {
 		    	var rule = sheet.cssRules[i];
-		    	processRule(rule, sheet.href, media, mediaText);
+		    	processRule(rule, rule.selectorText, sheet.href, media, mediaText);
 			}
 
 		}
 
 
-		function processRule(rule, href, media, mediaText){
+		function processRule(rule, rule_selectorText, href, media, mediaText){
 
 			mediaText = mediaText=='all' ? '' : mediaText;
 
 			//console.log('rule', rule);
 
-			if( typeof rule.selectorText != 'undefined' ){
+			if( typeof rule_selectorText != 'undefined' ){
 				// style rule
 				//console.log('style rule', mediaText, rule);
 				
+				if(rule_selectorText.indexOf(',')>=0){
+					var subrules = rule_selectorText.split(', ');
+					for(var i=0;i<subrules.length;i++){
+						//console.log('sub rule', subrules[i]);
+						processRule(rule, subrules[i], href, media, mediaText);
+					}
+					return;
+				}
 
-				var elementSelectorSpecificities=SPECIFICITY.calculate(rule.selectorText);
+				var elementSelectorSpecificities=SPECIFICITY.calculate(rule_selectorText);
 				
 				if(elementSelectorSpecificities.length>1){
-					console.log('complex specificity ', rule.selectorText, rule, elementSelectorSpecificities);
+					console.log('complex specificity ', rule_selectorText, rule, elementSelectorSpecificities);
 				}
 
 				//todo: save specificity for complex rules
@@ -39,7 +47,7 @@
 				var elementSelectorSpecificity=elementSelectorSpecificities[0];
 				elementSelectorSpecificity.values = elementSelectorSpecificity.specificity.split(',');
 
-				var elementSelectorText = rule.selectorText;
+				var elementSelectorText = rule_selectorText;
 				var ignoredPseudoElementsAndClasses = [':link', ':visited', ':active', ':hover', ':focus', '::before', '::after'];
 				for(var i=0; i<ignoredPseudoElementsAndClasses.length; i++){
 					var ignored = ignoredPseudoElementsAndClasses[i];
@@ -50,7 +58,7 @@
 				elementSelectorRules.push({ 'href' : href, 'mediaText' : mediaText, 'rule': rule, specificity: elementSelectorSpecificity, order: rulesCount++});
 				rules[elementSelectorText] = elementSelectorRules;
 
-				//console.log('style rule', elementSelectorText, href, mediaText, rule.selectorText);
+				//console.log('style rule', elementSelectorText, href, mediaText, rule_selectorText);
 
 				return;
 			}
@@ -124,9 +132,9 @@
 		
 
 		function fixSelectorSpecificity(rule, errorSelector, relation, workingSelector){
-
+			// relation || '' because of doubleCheckElementRule error for p:hover, p.default 
 			selectorsOutOfContext.push({
-				original :rule, parent : errorSelector, relation: relation, child : workingSelector
+				original :rule, parent : errorSelector, relation: relation , child : workingSelector
 			});
 
 			return rule;
@@ -140,19 +148,19 @@
 		    return (ptone+pttwo);
 		}
 
-		function doubleCheckElementRule(rootElement, element, rule, matchedSelectors){
+		function doubleCheckElementRule(rootElement, element, rule, matchedSelectors, fullRule){
 			
 			
 			if(rule.indexOf(',')>=0){
 
 				// process combined (complex) rules
-				var rules = rule.split(', ');
-				for(var i=0;i<rules.length;i++){
+				var r = rule.split(', ');
+				for(var i=0;i<r.length;i++){
 
-					console.log('processing one of complex rules [', rules[i],']');
+					//console.log('processing one of complex rules [', r[i],']');
 
 					try{
-						doubleCheckElementRule(rootElement, element, rules[i], matchedSelectors);	
+						doubleCheckElementRule(rootElement, element, r[i], matchedSelectors);	
 					}
 					catch(e){
 						console.log(e);
@@ -168,9 +176,11 @@
 			var selectorParts  = splitSelector(rule);
 			var parentSelector = selectorParts[0];
 			var lastSelector = '';
-			var lastRelation = selectorParts[1];
+			var lastRelation = selectorParts[1] || '';
 			var errorSelector = "";
 			var workingSelector = rule;
+			var prevSelector = "";
+			var prevRelation = "";
 
 			if(!hasElementSelector(rootElement,parentSelector,rule)) {
 				errorSelector = parentSelector;
@@ -182,7 +192,7 @@
 			}
 
 			for(var i=1;i<selectorParts.length && errorSelector==''; i+=2){
-			
+
 				lastRelation = selectorParts[i];
 				lastSelector = selectorParts[i+1];
 
@@ -190,11 +200,37 @@
 
 				if(!hasElementSelector(rootElement,parentSelector,rule)){
 				 errorSelector = removeLast(parentSelector,lastSelector);
-				 workingSelector = rule.replace(errorSelector,''); // todo: make reverse travesal instead of using just last selector
-				errorSelector = removeLast(errorSelector,lastRelation);
+				 workingSelector = rule.replace(errorSelector,''); 
+				 errorSelector = removeLast(errorSelector,lastRelation);
 
-				 //console.log('next-->',i,rule,'---',workingSelector,'---',errorSelector,' deleted',errorSelector);
+				//console.log('next-->',i,rule,'---',workingSelector,'---',errorSelector,' deleted',errorSelector);
+
+ 				var workingSelectorWithLastSelector =  prevSelector + prevRelation + workingSelector;
+
+				//console.log('try reverse lookup -->',workingSelectorWithLastSelector);
+				 
+				 // make reverse travesal instead of using just last selector
+				 // todo: make reciursive travesal
+
+				 if(hasElementSelector(rootElement,workingSelectorWithLastSelector,rule)){
+
+				 	
+				 	errorSelector = removeLast(errorSelector,prevSelector);
+				 	if(i>=5) {
+				 		lastRelation = selectorParts[i-4];
+				 		errorSelector = removeLast(errorSelector,lastRelation); // prev relation
+						
+				 	}
+					workingSelector = workingSelectorWithLastSelector;	
+				 	//console.log('reversed-->',i,rule,'---',workingSelector,'---',errorSelector,' deleted',errorSelector);
+				 }
+
+				 
 				}
+
+
+				prevRelation = lastRelation;
+				prevSelector = lastSelector;
 			}
 
 
@@ -288,7 +324,7 @@
 		}
 
 
-		function getElementStylesGroupedByMediaText(element){
+		function getElementStylesGroupedByMediaText(element, id){
 
 			var selectors = processElement(element,[]);
 			
@@ -317,10 +353,13 @@
 
 			var current = { MediaText : '', Rules : [] };
 			
+			var includedRules = [];
 
 			for(var i=0; i<elementRules.length;i++){
 
 					var rule = elementRules[i];
+
+
 					var mediaText = rule.mediaText || '';
 
 					if(mediaText != current.MediaText) {
@@ -330,6 +369,15 @@
 						current = { MediaText : mediaText, Rules : [] };
 					}
 					
+
+					if( $.inArray(rule.rule, includedRules) >=0 ){
+						//console.log('skip already included rule',rule.rule, includedRules);
+						continue;
+						
+					} else{
+						includedRules.push(rule.rule);
+					}
+
 					var css = rule.rule.cssText;
 					//console.log('all selectors out of context that should be fixed:',selectorsOutOfContext);
 					for(var j=0; j<selectorsOutOfContext.length;j++){
@@ -337,13 +385,16 @@
 						
 						if(css.indexOf(selector.original + ' {')>=0 ||
 							css.indexOf(selector.original + ',')>=0 ){
-							css = css.replace(selector.original, '.snippet '+selector.relation +selector.child);
-							//todo: build parent based on SPECIFICITY
-							console.log('removed context for selector', selector.original, ' => .snippet ', selector.relation ,selector.child);
+							//todo: maybe ignore relation
+							var newContext = 'section#'+id+'.snippet';
+							css = css.replace(selector.original, newContext+' '+selector.relation +selector.child);
+							//todo: build parent based on SPECIFICITY 
+							console.log('removed context for selector', selector.original, ' => ',newContext,' ', selector.relation ,selector.child);
 							
 						}
 					}						
 					current.Rules.push(css);
+					
 					
 					//console.log('rule with media', mediaText, ',' , rule.rule.selectorText);
 			}
@@ -353,11 +404,11 @@
 			return rulesGroupedByMediaText;
 		}
 
-		function getElementCss(element){
+		function getElementCss(element,id){
 
 			var css = '';
 
-			var stylesGroupedByMediaText = getElementStylesGroupedByMediaText(element);
+			var stylesGroupedByMediaText = getElementStylesGroupedByMediaText(element,id);
 			//console.log('element styles', element, stylesGroupedByMediaText);
 
 			for(var i=0;i<stylesGroupedByMediaText.length;i++){
@@ -377,11 +428,24 @@
 			return css;
 		}
 
+		function getNewGUID () {
+			var guidTemplate = 'id-xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx';
+			var date = new Date().getTime();
+			
+			return guidTemplate.replace(/[xy]/g, function (c) {
+				var r = (date + Math.random() * 16) % 16 | 0;
+				date = Math.floor(date / 16);
+				return (c == 'x' ? r : (r & 0x7 | 0x8)).toString(16);
+			});
+		}
+
 		function processDocument(){
 
 			processDocumentSheets();
 
-		var selector = '.default, .JA_columns.JA_threeColumns.JA_belowQuestionBoxPane:first, .lso';//prompt("Enter an element's selector",'');
+		var selector = 'div.default, .JA_columns.JA_threeColumns.JA_belowQuestionBoxPane:first, .lso';//prompt("Enter an element's selector",'');
+        //var selector = '#ctl00_BodyContent_pnlDualTabQBox';
+        //var selector = 'form';
 
 			var elements = $(selector);
 			
@@ -391,8 +455,11 @@
 			}
 
 			var element = elements[0];
-			var css = getElementCss(element);
-			var html = '<section class="snippet">'+element.outerHTML+'</section>';
+			var id=getNewGUID(); //todo: use something more meaningful, e.g. hash(url,selector)
+			var css = getElementCss(element,id);
+			
+
+			var html = '<section id="'+id+'" class="snippet">'+element.outerHTML+'</section>';
 
 			var source = "<style>\r\n"+css+"\r\n</style>"+html;
 			source = source.replace(/url\(\//ig, 'url('+document.location.origin+'/');
