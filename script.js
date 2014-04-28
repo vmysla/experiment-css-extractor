@@ -54,7 +54,9 @@
 					var ignored = ignoredPseudoElementsAndClasses[i];
 					elementSelectorText = elementSelectorText.replace(ignored,'');
 				}
-				
+
+				if(elementSelectorText=='body') elementSelectorText = '*'; // to match body
+
 				var elementSelectorRules = rules[elementSelectorText] || [];
 				elementSelectorRules.push({ 'href' : href, 'mediaText' : mediaText, 'rule': rule, specificity: elementSelectorSpecificity, order: rulesCount++});
 				rules[elementSelectorText] = elementSelectorRules;
@@ -261,7 +263,7 @@
 					var contextSafeRule = doubleCheckElementRule(rootElement, element, rule, matchedSelectors);
 					matchedSelectors.push(contextSafeRule);
 					return true;
-			};
+			}
 
 			if(element.hasChildNodes()){
 				for(var i=0; i<element.childNodes.length;i++){
@@ -279,6 +281,10 @@
 		function processElement(element, matchedSelectors){
 
 			selectorsOutOfContext = [];		
+			//selectorsOutOfContext.push({
+			//	original :'body', parent : 'body', relation: '' , child : ''
+			//});
+		
 
 			//console.log('element', element);
 
@@ -394,6 +400,7 @@
 							css.indexOf(selector.original + ',')>=0 ){
 							//todo: maybe ignore relation
 
+
 							// build parent based on SPECIFICITY 
 							// todo: somehow handle situation when some part of specificity > 1..
 							var specificity = s(selector.parent).r;
@@ -451,6 +458,7 @@
 				css += cssByMedia;
 			}
 
+			css = css.replace (/(\s+)body([\s\,]+)/ig, '$1#'+id+'$2');
 			return css;
 		}
 
