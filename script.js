@@ -157,6 +157,11 @@
 		    return (ptone+pttwo);
 		}
 
+		function trim(x)
+		{
+		return x.replace(/^\s+|\s+$/gm,'');
+		}
+
 		function doubleCheckElementRule(rootElement, element, rule, matchedSelectors, fullRule){
 			
 			
@@ -169,7 +174,7 @@
 					//console.log('processing one of complex rules [', r[i],']');
 
 					try{
-						doubleCheckElementRule(rootElement, element, r[i], matchedSelectors);	
+						doubleCheckElementRule(rootElement, element, trim(r[i]), matchedSelectors);	
 					}
 					catch(e){
 						console.log(e);
@@ -182,7 +187,7 @@
 			
 			//console.log('double check ', element, rule, rules[rule]);
 
-			var selectorParts  = splitSelector(rule);
+			var selectorParts  = splitSelector( trim(rule) );
 			var parentSelector = selectorParts[0];
 			var lastSelector = '';
 			var lastRelation = selectorParts[1] || '';
@@ -336,7 +341,6 @@
 			});
 		}
 
-
 		function getElementStylesGroupedByMediaText(element, id){
 
 			var selectors = processElement(element,[]);
@@ -383,7 +387,7 @@
 					}
 					
 
-					if( $.inArray(rule.rule, includedRules) >=0 ){
+					if( includedRules.indexOf(rule.rule) !=-1 ){
 						//console.log('skip already included rule',rule.rule, includedRules);
 						continue;
 						
@@ -477,11 +481,12 @@
 
 			processDocumentSheets();
 
-		var selector = 'div.default, .JA_columns.JA_threeColumns.JA_belowQuestionBoxPane:first, .lso';//prompt("Enter an element's selector",'');
+		var selector = 'div.default'//, .JA_columns.JA_threeColumns.JA_belowQuestionBoxPane:first, .lso';//prompt("Enter an element's selector",'');
         //var selector = '#ctl00_BodyContent_pnlDualTabQBox';
         //var selector = 'form';
+        //var selector = '#JA_contentContainer';
 
-			var elements = $(selector);
+			var elements = document.querySelectorAll(selector);
 			
 			if(elements.length!=1){
 				alert("element by this selector isn't unique!");
