@@ -522,6 +522,9 @@
 			}			
 		}
 
-	$(document).ready(function(){
-		window.setTimeout(processDocument,1000);
-	});
+
+	document.onreadystatechange = function() {
+	    if (document.readyState === 'complete') {
+	        window.setTimeout(processDocument,1000);
+	    }
+	};
