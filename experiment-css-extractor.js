@@ -345,7 +345,7 @@
 
 			var selectors = processElement(element,[]);
 			
-			//console.log('all rules matched to element', element, selectors);
+			console.log('all rules matched to element', element, selectors);
 
 			function s(selector){
 				var v = SPECIFICITY.calculate(selector)[0].specificity;
@@ -386,16 +386,18 @@
 						current = { MediaText : mediaText, Rules : [] };
 					}
 					
+					var css = rule.rule.cssText;
 
-					if( includedRules.indexOf(rule.rule) !=-1 ){
-						//console.log('skip already included rule',rule.rule, includedRules);
+					if( includedRules.indexOf(rule.order) !=-1 ){
+						console.log('skip already included rule',rule.rule, includedRules);
 						continue;
 						
 					} else{
-						includedRules.push(rule.rule);
+						//console.log('included rule',rule.rule, includedRules);
+						includedRules.push(rule.order);
 					}
 
-					var css = rule.rule.cssText;
+					
 					//console.log('all selectors out of context that should be fixed:',selectorsOutOfContext);
 					for(var j=0; j<selectorsOutOfContext.length;j++){
 						var selector = selectorsOutOfContext[j];
