@@ -1,0 +1,19 @@
+{
+	"name" : "experiment-css-extractor",
+	"version" : "0.2.0",
+	"description" : "JavaScript Library for Responsive HTML Snippet Grabbing with CSS",
+	"keywords" : ["CSS", "HTML"],
+	"homepage" : "https://github.com/vmysla/experiment-css-extractor",
+	"author" : {
+		"name" : "Vlad Mysla",
+		"url" : "http://vlad.mysla.me"
+	},
+	"repository" : {
+		"type" : "git",
+		"url" : "https://github.com/vmysla/experiment-css-extractor.git"
+	},
+	"license": "GNU",
+	"bugs": {
+		"url": "https://github.com/vmysla/experiment-css-extractor/issues"
+	}
+}

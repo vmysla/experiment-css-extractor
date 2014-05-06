@@ -1,0 +1,15 @@
+[submodule "lib/specificity"]
+	path = lib/specificity
+	url = https://github.com/keeganstreet/specificity.git
+[submodule "lib/less"]
+	path = lib/less
+	url = https://github.com/less/less.js.git
+[submodule "lib/sizzle"]
+	path = lib/sizzle
+	url = https://github.com/jquery/sizzle.git
+[submodule "lib/jasmine"]
+	path = lib/jasmine
+	url = https://github.com/pivotal/jasmine.git
+[submodule "lib/jquery"]
+	path = lib/jquery
+	url = https://github.com/jquery/jquery.git
